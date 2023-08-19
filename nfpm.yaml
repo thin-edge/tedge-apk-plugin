@@ -4,6 +4,7 @@ name: tedge-apk-plugin
 arch: all
 platform: linux
 version: ${SEMVER}
+release: "r1"
 section: misc
 priority: optional
 maintainer: Community <community@thin-edge.io>
