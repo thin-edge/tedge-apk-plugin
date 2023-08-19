@@ -45,6 +45,12 @@ jobs:
           echo 'C8Y_PASSWORD="${{ secrets.C8Y_PASSWORD }}"' >> .env
           cat .env
 
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '>=1.17.0'
+      - run: go install github.com/goreleaser/nfpm/v2/cmd/nfpm@latest
+        name: Install dependencies
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
