@@ -2,7 +2,7 @@
 
 ## Plugin summary
 
-Managed Alpine Linux packages on a device using thin-edge.io software management plugin.
+Manage Alpine Linux packages on a device using thin-edge.io software management plugin api.
 
 **Technical summary**
 
@@ -22,9 +22,7 @@ The following linux package formats are provided on the releases page and also i
 
 |Operating System|Repository link|
 |--|--|
-|Debian/Raspian (deb)|[![Latest version of 'tedge-apk-plugin' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/thinedge/community/deb/tedge-apk-plugin/latest/a=all;d=any-distro%252Fany-version;t=binary/?render=true&show_latest=true)](https://cloudsmith.io/~thinedge/repos/community/packages/detail/deb/tedge-apk-plugin/latest/a=all;d=any-distro%252Fany-version;t=binary/)|
 |Alpine Linux (apk)|[![Latest version of 'tedge-apk-plugin' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/thinedge/community/alpine/tedge-apk-plugin/latest/a=noarch;d=alpine%252Fany-version/?render=true&show_latest=true)](https://cloudsmith.io/~thinedge/repos/community/packages/detail/alpine/tedge-apk-plugin/latest/a=noarch;d=alpine%252Fany-version/)|
-|RHEL/CentOS/Fedora (rpm)|[![Latest version of 'tedge-apk-plugin' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/thinedge/community/rpm/tedge-apk-plugin/latest/a=noarch;d=any-distro%252Fany-version;t=binary/?render=true&show_latest=true)](https://cloudsmith.io/~thinedge/repos/community/packages/detail/rpm/tedge-apk-plugin/latest/a=noarch;d=any-distro%252Fany-version;t=binary/)|
 
 ### What will be deployed to the device?
 
@@ -46,6 +44,12 @@ The following packages are required to use the plugin:
 
     ```sh
     just up
+    ```
+
+2. Bootstrap the device
+
+    ```sh
+    just bootstrap
     ```
 
 ### Stop demo
