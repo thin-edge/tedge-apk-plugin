@@ -12,6 +12,10 @@ on:
   push:
     branches: [ main ]
   merge_group:
+
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Test
@@ -96,6 +100,11 @@ jobs:
     if: ${{ always() && github.event_name == 'pull_request_target' }}
     needs: [test]
     runs-on: ubuntu-latest
+    permissions:
+      # Required to publish system test results to the PR
+      issues: write
+      pull-requests: write
+      contents: read
     steps:
     - uses: actions/checkout@v6
     - name: Download reports
