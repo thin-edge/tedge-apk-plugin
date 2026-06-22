@@ -35,25 +35,3 @@ The following linux package formats are provided on the releases page and also i
 The following packages are required to use the plugin:
 
 * Alpine Linux
-
-## Development
-
-### Start demo
-
-1. Start the demo
-
-    ```sh
-    just up
-    ```
-
-2. Bootstrap the device
-
-    ```sh
-    just bootstrap
-    ```
-
-### Stop demo
-
-```sh
-just down
-```
