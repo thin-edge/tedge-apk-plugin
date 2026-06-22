@@ -1,7 +1,8 @@
-FROM alpine:3.18
-RUN apk add --no-cache openrc sudo
-RUN wget -O - thin-edge.io/install.sh | sh -s
-RUN wget -O - thin-edge.io/install-services.sh | sh -s
+ARG TEST_IMAGE=alpine:3.18
+FROM ${TEST_IMAGE}
+RUN apk add --no-cache openrc sudo bash curl
+RUN wget -O - thin-edge.io/install.sh | sh -s -- --init-system openrc \
+    && mkdir -p /etc/tedge/mappers/local
 
 COPY ./images/files/bootstrap.sh /usr/bin/
 COPY ./dist/*.apk /tmp/

@@ -1,9 +1,8 @@
 *** Settings ***
 Resource    ../resources/common.robot
-Library    Cumulocity
-Library    DeviceLibrary
 
-Suite Setup    Set Main Device
+Test Setup       Setup Device
+Test Teardown    Teardown Device
 
 *** Test Cases ***
 
@@ -18,7 +17,6 @@ Install package via file without release suffix
     ${operation}=    Cumulocity.Install Software    dummy-without-release,latest::apk,${binary_url}
     Operation Should Be SUCCESSFUL    ${operation}
     Cumulocity.Device Should Have Installed Software    dummy-without-release,2.0.1
-
 
 Install/Uninstall package via Cumulocity
     # install
